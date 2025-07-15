@@ -1,0 +1,157 @@
+/* Review Container */
+.review-container {
+    width: 80%;
+    margin: 50px auto;
+    padding: 40px 0;
+    background: #f8f9fa; /* Light grey background */
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Title Styling */
+h2 {
+    font-size: 2rem;
+    text-align: center;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+/* Slick Slider */
+.slick-slider {
+    background: transparent;
+}
+
+/* Space Between Slides */
+.slick-slide {
+    padding: 0 15px;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Navigation Arrows */
+.slick-prev, .slick-next {
+    z-index: 10;
+    width: 50px; /* Bigger buttons */
+    height: 50px;
+    background: rgba(255, 255, 255, 0.9); /* White background */
+    border-radius: 50%;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15);
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Arrow Icon Color */
+.slick-prev:before, .slick-next:before {
+    font-size: 24px;
+    color: #333 !important; /* Dark grey for contrast */
+}
+
+/* Hover Effect */
+.slick-prev:hover, .slick-next:hover {
+    background: #00796B; /* Teal on hover */
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.slick-prev:hover:before, .slick-next:hover:before {
+    color: #fff !important; /* White arrow on hover */
+}
+
+/* Adjust Position */
+.slick-prev {
+    left: -60px;
+}
+
+.slick-next {
+    right: -60px;
+}
+
+/* Review Card */
+.review-card {
+    background: #e3f2fd; /* Light Blue */
+    border: 2px solid #009688; /* Teal Border */
+    border-radius: 12px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+    padding: 25px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    margin: 0 auto 15px; /* Center alignment */
+}
+
+
+/* Reviewer Image */
+.review-photo {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 12px;
+    border: 3px solid #009688; /* Teal Border */
+}
+
+/* Review Text */
+.review-card p {
+    font-size: 15px;
+    color: #333;
+    margin-bottom: 8px;
+}
+
+/* Reviewer Name */
+h4 {
+    font-size: 16px;
+    font-weight: bold;
+    color: #222;
+    margin-top: 8px;
+}
+
+/* Star Rating */
+.rating {
+    font-size: 18px;
+    color: #ffc107; /* Gold */
+    margin-top: 8px;
+}
+
+/* Slick Dots */
+.slick-dots li button:before {
+    color: #009688 !important; /* Teal */
+}
+
+.slick-dots li.slick-active button:before {
+    color: #f02f15 !important; /* Gold */
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .review-container {
+        width: 90%;
+    }
+    .slick-prev {
+        left: -40px;
+    }
+    .slick-next {
+        right: -40px;
+    }
+}
+
+@media (max-width: 768px) {
+    .review-container {
+        width: 95%;
+    }
+    
+    h2 {
+        font-size: 1.8rem;
+    }
+    
+    .slick-prev {
+        left: -30px;
+    }
+    
+    .slick-next {
+        right: -30px;
+    }
+}

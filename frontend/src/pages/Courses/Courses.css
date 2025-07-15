@@ -1,0 +1,246 @@
+/* General Course Section Styling */
+.course {
+    width: 80%;
+    margin: 50px auto;
+    padding-top: 50px;
+}
+
+/* Recommended Course Section */
+.course h3 {
+    font-size: 32px;
+    margin: 39px 0px 16px 0px;
+    text-align: left;
+    color: #333;
+}
+
+.course-recomendation {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #c8c8f1;
+    padding: 20px;
+    height: 250px;
+    gap: 30px;
+}
+
+/* Course Photo Section */
+.course-photo {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.course-photo img {
+    align-self: flex-start;
+    height: 220px;
+}
+
+/* Course Content Section */
+.course-content {
+    width: 75%;
+}
+
+.course-content h3 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+}
+
+.course-content h3 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 5px;
+}
+.course-content-details {
+    padding: 15px;
+    /* background: #f9f9f9; */
+    /* border-left: 4px solid #3674B5; */
+    font-size: 16px;
+    color: #444;
+    /* line-height: 1.5; */
+}
+
+.course-content-details p {
+    margin: 5px 0;
+}
+
+.course-content-price {
+    font-size: 20px;
+    font-weight: bold;
+    color: #3674B5;
+    margin-top: 10px;
+}
+
+
+/* Course Display Section */
+.course-display {
+    width: 80%;
+    margin: auto;
+    text-align: center;
+}
+
+.course-display h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+/* Course Grid */
+.course-display-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    justify-content: center;
+}
+
+/* Individual Course Card */
+.course-item {
+    background: white;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.course-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.18);
+}
+
+.course-item img {
+    object-fit: cover;
+}
+
+.course-item h3 {
+    font-size: 1.5rem;
+    margin-top: 15px;
+    color: #222;
+}
+
+.course-item p {
+    font-size: 1rem;
+    color: #555;
+    margin-top: 10px;
+}
+
+/* View More Button */
+.view-more-button {
+    margin-top: 40px;
+}
+
+.view-more-button button {
+    background: #3674B5;
+    color: white;
+    padding: 15px 60px;
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.view-more-button button:hover {
+    background: #28598C;
+    transform: scale(1.05);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .course-display-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .course-recomendation {
+        flex-direction: column;
+        text-align: center;
+        padding: 20px;
+    }
+
+    .course-photo {
+        justify-content: center;
+    }
+
+    .course-photo img {
+        max-width: 300px;
+    }
+
+    .course-content {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .course {
+        width: 90%;
+    }
+
+    .course-display h1 {
+        font-size: 2rem;
+    }
+
+    .course-display-list {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .view-more-button button {
+        width: 100%;
+    }
+}
+
+@media (max-width: 1040px) {
+    .course-content {
+        display: none;
+    }
+    .course-recomendation {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: auto; /* Auto height to fit image */
+        min-height: 250px;
+        padding: 0;
+    }
+    .course-photo {
+        width: 100%;
+        height: 100%;
+        display: flex;
+    }
+    .course-photo img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover; /* Ensures full coverage */
+        object-position: center; /* Keeps image centered */
+    }
+}
+
+@media (max-width: 768px) {
+    .course-content {
+        display: none;
+    }
+    .course-recomendation {
+        height: auto;
+        min-height: 250px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+    }
+    .course-photo {
+        width: 100%;
+        height: 100%;
+        display: flex;
+    }
+    .course-photo img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+    }
+}
+
+
+

@@ -1,0 +1,79 @@
+.notifications-container {
+  max-width: 900px;
+  margin: 80px auto;
+  padding-top: 100px;
+  padding: 20px;
+  background-color: #fff;
+  font-family: sans-serif;
+}
+
+.notifications-container h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.notifications-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.notification-card {
+  position: relative;
+  padding: 20px;
+  border-bottom: 1px solid #ddd;
+  background-color: #fafafa;
+  border-radius: 8px;
+}
+
+.close-btn {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  background: none;
+  border: none;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  color: #999;
+}
+
+.tag {
+  display: inline-block;
+  font-size: 12px;
+  padding: 4px 10px;
+  border-radius: 4px;
+  color: white;
+  margin-bottom: 10px;
+}
+
+.green { background-color: #28a745; }
+.orange { background-color: #ffc107; color: black; }
+.purple { background-color: #6f42c1; }
+.skyblue { background-color: #17a2b8; }
+
+.title {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 5px 0;
+}
+
+.desc {
+  font-size: 14px;
+  color: #555;
+}
+
+.user {
+  font-size: 14px;
+  color: #e74c3c;
+  margin-top: 5px;
+}
+
+.timestamp {
+  font-size: 12px;
+  color: #888;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-top: 10px;
+}

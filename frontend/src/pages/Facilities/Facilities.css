@@ -1,0 +1,165 @@
+.facilities {
+  background-color: #f8f9fa;
+  padding: 50px 20px;
+  text-align: center;
+  margin-top: 50px;
+}
+
+.facilities-container {
+  max-width: 80%;
+  margin: 0 auto;
+}
+
+.facilities-title {
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+  color: #333;
+}
+
+/* Facility Section */
+.facility-section {
+  background: #F5EFFF;
+  background-color: #c8c8f1;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  text-align: left;
+  margin-bottom: 30px;
+  gap: 20px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.facility-section:hover {
+  transform: translateY(-5px);
+}
+
+/* Facility Content */
+.facility-content {
+  width: 50%;
+}
+
+.facility-content h2 {
+  font-size: 1.8rem;
+  color: #222;
+  margin-bottom: 10px;
+}
+
+.facility-content p {
+  font-size: 1rem;
+  color: #555;
+  max-width: 90%;
+  line-height: 1.6;
+}
+
+/* Facility Image */
+.facility-image {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.facility-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+/* ✅ Responsive Design */
+@media (max-width: 1024px) {
+  .facilities-container {
+    max-width: 90%;
+  }
+
+  .facility-section {
+    flex-direction: column;
+    text-align: center;
+    padding: 30px;
+  }
+
+  .facility-content,
+  .facility-image {
+    width: 100%;
+  }
+
+  .facility-content h2 {
+    font-size: 1.6rem;
+  }
+
+  .facility-content p {
+    font-size: 0.95rem;
+  }
+
+  /* Rotate Odd Cards on Small Screens and Swap Content */
+  .facility-section:nth-child(even) {
+    flex-direction: column-reverse; /* Swap the order: image at bottom, text at top */
+  }
+}
+
+@media (max-width: 768px) {
+  .facilities {
+    padding: 40px 15px;
+  }
+
+  .facilities-title {
+    font-size: 2rem;
+  }
+
+  .facility-section {
+    padding: 20px;
+    gap: 15px;
+  }
+
+  .facility-content h2 {
+    font-size: 1.5rem;
+  }
+
+  .facility-content p {
+    font-size: 0.9rem;
+  }
+
+  .facility-image img {
+    border-radius: 8px;
+  }
+
+  /* Rotate Odd Cards on Small Screens and Swap Content */
+  .facility-section:nth-child(even) {
+    flex-direction: column-reverse; /* Swap the order: image at bottom, text at top */
+  }
+}
+
+@media (max-width: 480px) {
+  .facilities {
+    padding: 30px 10px;
+  }
+
+  .facilities-title {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+  }
+
+  .facility-section {
+    padding: 15px;
+  }
+
+  .facility-content h2 {
+    font-size: 1.3rem;
+  }
+
+  .facility-content p {
+    font-size: 0.85rem;
+  }
+
+  .facility-image img {
+    border-radius: 6px;
+  }
+
+  /* Rotate Odd Cards on Extra Small Screens and Swap Content */
+  .facility-section:nth-child(even) {
+    flex-direction: column-reverse; /* Swap the order: image at bottom, text at top */
+  }
+}

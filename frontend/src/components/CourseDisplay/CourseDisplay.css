@@ -1,0 +1,53 @@
+.course-display {
+    margin-top: 30px;
+}
+
+.course-display h1 {
+    font-size: max(2vw, 40px);
+    /* font-weight: 600; */
+}
+
+.course-display-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    /* ✅ 3 columns per row */
+    gap: 50px;
+    /* ✅ Spacing between cards */
+    justify-content: center;
+    max-width: 80%;
+    margin: auto;
+}
+
+.course-display h1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 50px;
+    /* color: #616161; */
+    /* font-weight: 500; */
+
+}
+
+.view-more-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 40px;
+}
+
+.view-more-button button {
+    color: white;
+    background: #3674B5;
+    padding: 20px 100px; /* ✅ Button ko proper size dene ke liye */
+    border: none;
+    border-radius: 8px; /* ✅ Smooth corners */
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.view-more-button button:hover {
+    background: #28598C; /* ✅ Darker blue on hover */
+    transform: scale(1.05); /* ✅ Slightly enlarge */
+}

@@ -1,0 +1,40 @@
+/* AdminNavbar.css */
+
+.admin-navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    color: white;
+    padding: 15px 30px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+  }
+  
+  .admin-navbar-left h2 {
+    margin: 0;
+    font-size: 24px;
+  }
+  
+  .admin-navbar-right {
+    display: flex;
+    align-items: center;
+  }
+  
+  .admin-logout-btn {
+    background-color: #e74c3c;
+    color: white;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .admin-logout-btn:hover {
+    background-color: #c0392b;
+  }
+  

@@ -1,0 +1,148 @@
+.login-popup {
+    position: fixed;
+    /* Covers the whole screen */
+    z-index: 1000;
+    /* Ensures it's above other elements */
+    top: 0px;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Semi-transparent black */
+    display: grid;
+    place-items: center;
+    /* Centers content */
+}
+
+.login-popup-container {
+    place-self: center;
+    width: max(23vw, 330px);
+    color: #808080;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    padding: 25px 30px;
+    border-radius: 8px;
+    animation: fadeIn 0.5s;
+    font-size: 14px;
+}
+
+.login-popup-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: black;
+}
+
+
+.login-popup-title img {
+    width: 16px;
+    cursor: pointer;
+}
+
+.radio-section {
+    display: flex;
+    gap: 25px;
+    margin: 15px 0;
+  }
+  
+  .radio-section-content {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+  }
+  
+  .radio-section-content input[type="radio"] {
+    cursor: pointer;
+  }
+  
+  .radio-section-content span {
+    font-size: 16px;
+    color: #333;
+  }
+  
+.login-popup-input {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.login-popup-input input {
+    outline: none;
+    border: 1px solid #c9c9c9;
+    padding: 10px;
+    border-radius: 4px;
+}
+
+.login-popup-container button {
+    border: none;
+    padding: 10px;
+    border-radius: 4px;
+    color: white;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.login-popup-reset {
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    gap: 8px;
+    /* Add spacing between input and text */
+    font-size: 12px;
+}
+
+
+.login-popup-reset p {
+    color: #0000FF;
+    font-weight: 500;
+    cursor: pointer;
+    text-decoration: underline;
+    text-decoration-color: #0000FF;
+}
+
+.login-popup p {
+    font-size: 14px;
+    color: #333;
+}
+
+.login-popup p span {
+    color: #0000FF;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.login-popup-radio {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    /* Adjust spacing between radio buttons */
+    font-size: 12px;
+}
+
+.login-popup-radio input {
+    width: 14px;
+    height: 14px;
+    margin: 0;
+}
+
+.login-popup-radio label {
+    font-size: 12px;
+    color: #333;
+    cursor: pointer;
+}
+
+
+@media screen and (max-width: 768px) {
+    .login-popup {
+        position: fixed;
+        z-index: 3;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        height: 100%;
+    }
+}

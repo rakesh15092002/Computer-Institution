@@ -1,0 +1,114 @@
+/* Address Container */
+.address {
+    width: 80%;
+    max-width: 1200px;
+    margin: 100px auto; /* Adds spacing from other components */
+    padding: 40px;
+    /* background-color: #F5EFFF;  */
+    border-radius: 12px;
+    box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.08); /* Light shadow */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+}
+
+/* Address Text Section */
+.address-section {
+    flex: 1;
+    max-width: 600px;
+}
+
+.address-section h1 {
+    font-size: 28px;
+    color: #00796B;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.address-section p {
+    font-size: 16px;
+    color: #444;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+/* Map Section */
+.address-map-section {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.address-map-section iframe {
+    width: 100%;
+    max-width: 400px;
+    height: 300px;
+    border-radius: 12px;
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.1); /* Light shadow */
+    border: none;
+}
+
+/* ✅ Responsive Design */
+@media (max-width: 1024px) {
+    .address {
+        width: 90%;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 30px;
+    }
+
+    .address-section {
+        max-width: 100%;
+    }
+
+    .address-map-section {
+        max-width: 100%;
+    }
+
+    .address-map-section iframe {
+        max-width: 100%;
+        height: 250px;
+    }
+}
+
+@media (max-width: 768px) {
+    .address {
+        width: 95%;
+        padding: 25px;
+    }
+
+    .address-section h1 {
+        font-size: 24px;
+    }
+
+    .address-section p {
+        font-size: 14px;
+    }
+
+    .address-map-section iframe {
+        height: 200px;
+    }
+}
+
+@media (max-width: 480px) {
+    .address {
+        width: 100%;
+        margin: 60px auto;
+        padding: 20px;
+    }
+
+    .address-section h1 {
+        font-size: 22px;
+    }
+
+    .address-section p {
+        font-size: 13px;
+    }
+
+    .address-map-section iframe {
+        height: 180px;
+    }
+}
