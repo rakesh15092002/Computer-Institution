@@ -6,6 +6,7 @@ import StoreContext from "../../../context/StoreContext";
 import { toast } from "react-toastify";
 
 const StudyMaterial = () => {
+  console.log("hi")
   const { url, token } = useContext(StoreContext);
   const [materials, setMaterials] = useState({
     notes: [],
