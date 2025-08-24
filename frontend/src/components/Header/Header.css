@@ -1,133 +1,100 @@
 .header {
-    height: 34vw;
-    width: 80%;
-    margin: 100px auto 50px; /* Increased top margin to avoid touching navbar */
-    background: url('/cover2.avif') no-repeat center center;
-    background-size: cover;
-    position: relative;
-    border-radius: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(to right, #0f1b3d, #1a2b5a, #2c3e70);
+  background-size: cover;
+  padding: 60px 10%;
+  height: 80vh;
+  color: white;
+  border-radius: 20px;
+  overflow: hidden;
+  margin-top: 80px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
-/* Header Content */
 .header-contents {
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    align-items: start;
-    gap: 1.5vw;
-    max-width: 50%;
-    bottom: 10%;
-    left: 6vw;
-    animation: fadeIn 3s;
+  flex: 1;
+  max-width: 50%;
 }
 
-/* Heading */
 .header-contents h2 {
-    font-weight: 500;
-    color: #578FCA;
-    font-size: max(4vw, 22px);
+  font-size: 3.5rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  line-height: 1.2;
 }
 
-/* Paragraph */
+.header-contents h2 span {
+  color: #f59e0b; /* Orange highlight */
+  display: block;
+}
+
 .header-contents p {
-    color: gray;
-    font-size: max(1.2vw, 14px);
+  font-size: 1.3rem;
+  margin-bottom: 30px;
+  font-weight: 400;
+  color: #f0f0f0;
 }
 
-/* Button */
 .header-contents button {
-    border: none;
-    color: #747474;
-    font-weight: 500;
-    padding: 1vw 2.3vw;
-    background-color: white;
-    font-size: max(1vw, 13px);
-    border-radius: 30px;
-    cursor: pointer;
-    transition: 0.3s;
+  background-color: #f59e0b;
+  color: white;
+  padding: 14px 28px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: background-color 0.3s;
 }
 
 .header-contents button:hover {
-    background-color: #578FCA;
-    color: white;
+  background-color: #d97706;
 }
 
-/* Responsive Design */
-@media (max-width: 1024px) {
-    .header {
-        height: 42vw;
-        width: 90%;
-        margin: 90px auto 50px; /* Adjusted top margin */
-    }
-
-    .header-contents {
-        max-width: 60%;
-        left: 5vw;
-    }
-
-    .header-contents h2 {
-        font-size: max(4.5vw, 20px);
-    }
-
-    .header-contents p {
-        font-size: max(1.5vw, 14px);
-    }
-
-    .header-contents button {
-        padding: 1.5vw 3vw;
-    }
+.header-image {
+  flex: 1;
+  max-width: 60%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%; /* Ensure it stretches to full height of header */
 }
+
+.header-image img {
+  width: 115%;           /* Reduced from 130% */
+  height: 115%;          /* Reduced from 130% */
+  object-fit: cover;
+  transform: scale(1.15); /* Reduced zoom */
+  transition: transform 0.3s ease;
+  margin-left: -7%;      /* Slight shift to center */
+}
+
+
 
 @media (max-width: 768px) {
-    .header {
-        height: 55vw;
-        width: 95%;
-        margin: 90px auto 40px; /* Adjusted margin */
-    }
+  .header {
+    flex-direction: column;
+    padding: 40px 5%;
+    height: auto;
+    text-align: center;
+  }
 
-    .header-contents {
-        max-width: 75%;
-        left: 5%;
-        bottom: 20%;
-    }
+  .header-contents,
+  .header-image {
+    max-width: 100%;
+  }
 
-    .header-contents h2 {
-        font-size: max(5vw, 18px);
-    }
+  .header-contents h2 {
+    font-size: 2.5rem;
+  }
 
-    .header-contents p {
-        font-size: max(2vw, 13px);
-    }
+  .header-contents p {
+    font-size: 1.1rem;
+  }
 
-    .header-contents button {
-        font-size: max(2vw, 12px);
-        padding: 2vw 4vw;
-    }
-}
-
-@media (max-width: 480px) {
-    .header {
-        height: 65vw;
-        width: 100%;
-        margin: 90px auto 30px; /* Adjusted margin */
-    }
-
-    .header-contents {
-        max-width: 85%;
-        left: 5%;
-        bottom: 15%;
-    }
-
-    .header-contents h2 {
-        font-size: max(6vw, 16px);
-    }
-
-    .header-contents p {
-        font-size: max(2.5vw, 12px);
-    }
-
-    .header-contents button {
-        font-size: max(2.5vw, 11px);
-        padding: 2.5vw 5vw;
-    }
+  /* 🚫 Hide image on small screens */
+  .header-image {
+    display: none;
+  }
 }

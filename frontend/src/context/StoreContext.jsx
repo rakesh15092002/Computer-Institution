@@ -5,7 +5,7 @@ import axios from "axios";
 const StoreContext = createContext({});
 
 export const StoreContextProvider = ({ children }) => {
-  const url = "http://localhost:4000";
+  const url = import.meta.env.VITE_APP_BACKEND_BASE_URL;
 
   const [token, setToken] = useState(localStorage.getItem("token") || "");
   const [role, setRole] = useState(localStorage.getItem("role") || "");
