@@ -8,6 +8,7 @@
   margin: auto;
   flex-wrap: wrap; /* allow wrapping on small screens */
   gap: 10px;
+  height: 120px;
 }
 
 .logo {
