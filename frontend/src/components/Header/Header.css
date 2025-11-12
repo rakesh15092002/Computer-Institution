@@ -92,9 +92,7 @@
     box-shadow: none;
   }
 
-  .header-pattern {
-    display: none; /* Hide pattern on small screens */
-  }
+  
 
   .header-contents,
   .header-image {
