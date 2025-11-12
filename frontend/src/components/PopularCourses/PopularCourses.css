@@ -2,10 +2,10 @@
     margin-top: 30px;
 }
 
-.course-display h1 {
+/* .course-display h1 {
     font-size: max(2vw, 40px);
-    /* font-weight: 600; */
-}
+
+} */
 
 .course-display-list {
     display: grid;
@@ -19,11 +19,10 @@
 }
 
 .course-display h1 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 50px;
-    /* color: #616161; */
-    /* font-weight: 500; */
+    
+   text-align: center;
+   font-size: 36px;
+   color: #262f4d;
+   font-weight: 600;
 
 }

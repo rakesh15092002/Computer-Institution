@@ -24,6 +24,7 @@ const Home = () => {
 
       <PopularCourses />
       <Address />
+      <h1 className="about-director">About Director</h1>
       <AboutDirector />
       <TestimonialsSlider />
     </div>

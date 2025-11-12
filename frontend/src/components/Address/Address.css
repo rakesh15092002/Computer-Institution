@@ -63,7 +63,7 @@
     }
 
     .address-section {
-        max-width: 100%;
+        max-width: 90%;
     }
 
     .address-map-section {
@@ -97,7 +97,7 @@
 
 @media (max-width: 480px) {
     .address {
-        width: 100%;
+        width: 90%;
         margin: 60px auto;
         padding: 20px;
     }

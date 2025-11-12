@@ -75,7 +75,7 @@
 
 @media (max-width: 768px) {
     .about-director-section {
-        width: 95%;
+        width: 90%;
         padding: 20px;
     }
     .about-director {
@@ -93,4 +93,14 @@
     .photo-section img {
         max-width: 280px;
     }
+}
+
+@media (max-width: 480px) {
+    .about-director-section {
+        width: 90%;
+        padding: 20px;
+        margin-top: 20px;
+
+    }
+    
 }
