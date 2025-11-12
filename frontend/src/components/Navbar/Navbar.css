@@ -1,16 +1,24 @@
 /* General Navbar Styling */
 .navbar {
-    padding: 5px 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 100%;
     background: #fff;
-    position: fixed;
+    position: sticky;
     top: 0;
     left: 0;
-    z-index: 2;
+    z-index: 1000;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    flex-direction: column;
+}
+
+.bottom{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 20px;
+    background-color: #062f4f;
 }
 
 /* Logo Styling */
@@ -26,22 +34,23 @@
     list-style: none;
     font-size: 18px;
     color: #262f4d;
+    flex-wrap: wrap;
 }
 
 .navbar-menu a {
     text-decoration: none;
-    color: #262f4d;
-    transition: color 0.3s;
+    color: #ffffff;
+    font-size: 18px;
+    padding: 5px 10px;
+    border-radius: 12px;
+    box-sizing: border-box;
 }
 
 .navbar-menu a:hover {
-    color: #3674B5;
+    color: #000000;
+    background-color: #f59e0b;
 }
 
-.navbar-menu .active {
-    padding-bottom: 2px;
-    border-bottom: 2px solid #49557e;
-}
 
 /* Right Section Styling (Button) */
 .navbar-right {
@@ -102,8 +111,6 @@
 .navbar-profile-dropdown li:hover {
   color: tomato;
 }
-
-
 
 .navbar-button button {
     background: transparent;

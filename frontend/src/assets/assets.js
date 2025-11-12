@@ -20,6 +20,7 @@ import man_back2 from './man_back2.jpg'
 import hero_img from './hero_img.png'
 import profile_icon from './profile_icon.png'
 import studentImage from './studentImage.png'
+import background_svg from './download.svg'
 
 import course_1 from './ccc.jpg'
 import course_2 from './DCA.jpg'
@@ -56,7 +57,9 @@ export const assets = {
     man_back2,
     hero_img,
     profile_icon,
-    studentImage
+    studentImage,
+    course_1,
+    background_svg
     // 🔴 Removed: PhotoShop
 }
 

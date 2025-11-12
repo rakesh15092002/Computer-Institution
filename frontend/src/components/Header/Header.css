@@ -6,16 +6,21 @@
   background-size: cover;
   padding: 60px 10%;
   height: 80vh;
+  width: 90%;
+  margin: auto;
   color: white;
   border-radius: 20px;
   overflow: hidden;
-  margin-top: 80px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  box-sizing: border-box;
+  position: relative;
 }
 
 .header-contents {
   flex: 1;
   max-width: 50%;
+  position: relative; /* Needed for z-index to work */
+  z-index: 2;
 }
 
 .header-contents h2 {
@@ -59,6 +64,8 @@
   justify-content: center;
   align-items: center;
   height: 100%; /* Ensure it stretches to full height of header */
+  position: relative; /* Needed for z-index to work */
+  z-index: 2;
 }
 
 .header-image img {

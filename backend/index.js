@@ -27,7 +27,8 @@ const allowedOrigins = [process.env.FRONTEND_URL]; // Replace with your actual f
           callback(new Error('Not allowed by CORS'));
         }
       },
-      credentials: true // Set to true if your frontend sends cookies or authorization headers
+      credentials: true 
+      
     }));
 
 // API Routes
