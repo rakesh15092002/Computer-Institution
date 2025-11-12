@@ -5,7 +5,7 @@
   background: linear-gradient(to right, #0f1b3d, #1a2b5a, #2c3e70);
   background-size: cover;
   padding: 60px 10%;
-  height: 80vh;
+  max-height: 80vh;
   width: 90%;
   margin: auto;
   color: white;
@@ -63,7 +63,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100%; /* Ensure it stretches to full height of header */
+  height: auto; /* Ensure it stretches to full height of header */
   position: relative; /* Needed for z-index to work */
   z-index: 2;
 }
