@@ -88,7 +88,7 @@
     padding: 40px 5%;
     height: auto;
     text-align: center;
-    background: transparent;
+    /* background: transparent; */
     box-shadow: none;
   }
 
@@ -103,7 +103,7 @@
 
   .header-contents h2 {
     font-size: 5.5vw;
-    color: black;
+    color: green;
     margin: 0;
   }
 
@@ -113,7 +113,7 @@
 
   .header-contents p {
     font-size: 1.1rem;
-    color: black;
+    color: rgb(214, 210, 210);
   }
 
   .header-contents button{
