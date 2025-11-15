@@ -1,5 +1,5 @@
 .course-item {
-    width: 350px;
+    width: 280px;
     height: 350px;
     background: white;
     overflow: hidden;
@@ -53,7 +53,7 @@
 }
 
 .course-item-name-rating img {
-    width: 70px;
+    width: 68px;
 }
 
 /* Course description */

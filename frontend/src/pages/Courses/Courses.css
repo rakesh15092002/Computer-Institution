@@ -1,6 +1,6 @@
 /* General Course Section Styling */
 .course {
-    width: 80%;
+    width: 90%;
     margin: 50px auto;
     padding-top: 50px;
 }
@@ -75,7 +75,7 @@
 
 /* Course Display Section */
 .course-display {
-    width: 80%;
+    width: 90%;
     margin: auto;
     text-align: center;
 }
@@ -90,8 +90,9 @@
 /* Course Grid */
 .course-display-list {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 15px;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 35px;
+    
     justify-content: center;
 }
 

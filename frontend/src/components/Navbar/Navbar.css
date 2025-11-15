@@ -64,7 +64,7 @@
     flex-direction: column;
     gap: 5px;
     cursor: pointer;
-    z-index: 1001;
+    z-index: 10;
 }
 
 .hamburger div {
@@ -91,9 +91,9 @@
     .navbar-menu {
         flex-direction: column;
         position: fixed;
-        top: 120px;
+        top: 168px;
         right: -100%;
-        width: 40%;
+        width: 60%;
         height: calc(100% - 120px);
         background: #0f172a;
         box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
@@ -101,9 +101,10 @@
         text-align: left;
         transition: right 0.3s ease;
         overflow-y: auto;
-        z-index: 1000;
+        z-index: 10;
         flex-wrap: nowrap;
         overflow-y: auto;
+        min-width: 250px;
     }
 
     .navbar-menu.show {
@@ -132,10 +133,13 @@
     /* Show Hamburger */
     .hamburger {
         display: flex;
+        margin-left: auto;
     }
 
     /* Optional: hide desktop buttons on mobile */
     .navbar-button {
         display: none;
     }
+    
+    
 }

@@ -9,12 +9,12 @@
 
 .course-display-list {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     /* ✅ 3 columns per row */
     gap: 50px;
     /* ✅ Spacing between cards */
     justify-content: center;
-    max-width: 80%;
+    max-width: 90%;
     margin: auto;
 }
 
@@ -50,4 +50,28 @@
 .view-more-button button:hover {
     background: #28598C; /* ✅ Darker blue on hover */
     transform: scale(1.05); /* ✅ Slightly enlarge */
+}
+
+/* 📱 Responsive Design */
+@media (max-width: 1200px) {
+    .course-display-list {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 25px;
+    }
+}
+
+@media (max-width: 768px) {
+    .course-display-list {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .course-display-list {
+        grid-template-columns: 1fr;
+        gap: 15px;
+        max-width: 100%;
+    }
 }
