@@ -125,3 +125,76 @@
     display: none;
   }
 }
+
+/* --- ANIMATION CODE TO ADD --- */
+
+/* 1. Define the animations */
+
+/* For text content (slides in from left/bottom) */
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* For the image (slides in from the right) */
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+
+/* 2. Apply animations to your text elements */
+/* We animate each item one by one (staggered effect) */
+
+.header-contents h2,
+.header-contents .typed-text,
+.header-contents p,
+.header-contents button {
+  opacity: 0; /* Start hidden */
+  animation: slideInUp 0.6s ease-out forwards;
+}
+
+/* 3. Add delays to make them appear one after another */
+.header-contents h2 {
+  animation-delay: 0.2s;
+}
+
+.header-contents .typed-text {
+  animation-delay: 0.4s;
+}
+
+/* This targets both <p> tags */
+.header-contents p {
+  animation-delay: 0.6s; 
+}
+
+.header-contents button {
+  animation-delay: 0.8s;
+}
+
+
+/* 4. Apply animation to the image */
+.header-image {
+  opacity: 0; /* Start hidden */
+  animation: slideInRight 0.8s ease-out forwards;
+  animation-delay: 0.3s; /* Let it appear after the <h2> */
+}
+
+/* 5. On mobile, stop the image animation (since it's hidden) */
+@media (max-width: 768px) {
+  .header-image {
+    animation: none; /* Turn off animation */
+  }
+}

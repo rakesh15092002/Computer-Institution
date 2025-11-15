@@ -71,3 +71,24 @@
     color: #3674B5;
     margin-top: 10px;
 }
+
+/* Mobile view: screen width 600px or less */
+@media (max-width: 600px) {
+    .course-item {
+        width: 100%;      /* Take 90% of screen width */
+        height: auto;    /* Adjust height automatically */
+        margin: 10px auto; /* Center the card horizontally with some vertical spacing */
+    }
+
+    .course-item-img-container {
+        height: 100%; /* Optional: adjust image height for mobile */
+    }
+
+    .course-item-name-rating p {
+        font-size: 16px; /* Slightly smaller text for mobile */
+    }
+
+    .course-item-price {
+        font-size: 18px; /* Adjust price text */
+    }
+}

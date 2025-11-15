@@ -1,6 +1,7 @@
 .notifications-container {
-  max-width: 900px;
-  margin: 80px auto;
+  /* max-width: 900px; */
+  width: 90%;
+  margin: 10px auto;
   padding-top: 100px;
   padding: 20px;
   background-color: #fff;
@@ -22,7 +23,7 @@
   position: relative;
   padding: 20px;
   border-bottom: 1px solid #ddd;
-  background-color: #fafafa;
+  background-color: hsl(0, 0%, 85%);
   border-radius: 8px;
 }
 
