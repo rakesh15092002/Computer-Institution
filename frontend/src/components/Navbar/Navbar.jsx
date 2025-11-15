@@ -84,28 +84,7 @@ const Navbar = ({ setShowLogin }) => {
           >
             About
           </Link>
-          <Link
-            to="about-us"
-            onClick={() => handleMenuClick("about")}
-            className={menu === "about" ? "active" : ""}
-          >
-            About
-          </Link>
-          <Link
-            to="about-us"
-            onClick={() => handleMenuClick("about")}
-            className={menu === "about" ? "active" : ""}
-          >
-            About
-          </Link>
-          <Link
-            to="about-us"
-            onClick={() => handleMenuClick("about")}
-            className={menu === "about" ? "active" : ""}
-          >
-            About
-          </Link>
-
+         
           {/* ✅ Admin route sirf tabhi dikhe jab login ho aur role admin ho */}
           {token && role === "admin" && <Link to="/admin">Admin</Link>}
 
