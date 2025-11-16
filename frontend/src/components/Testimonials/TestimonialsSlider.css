@@ -1,217 +1,134 @@
-.testimonials-section {
-  width: 90%;
-  margin: auto;
-  background-color: #f9f9f9;
-  text-align: center;
-  position: relative; /* Needed for buttons positioning */
-}
-
-.testimonials-title {
-  font-size: 2rem;
-  margin-bottom: 2rem;
-  color: #333;
-}
-
-.mySwiper {
+/* Main section styling */
+.testimonials-slider {
   width: 100%;
-  padding-bottom: 3rem;
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 40px 20px; /* Buttons ke liye extra padding */
+  box-sizing: border-box;
+  text-align: center;
+  background-color: #f9f9f9; 
+  border-radius: 8px;
+  position: relative; /* Arrows ki positioning ke liye zaroori */
 }
 
-.swiper-slide {
-  display: flex;
-  justify-content: center;
+.testimonials-heading {
+  font-size: 2.2rem;
+  margin-bottom: 40px;
+  color: #333333;
 }
+
+/* Har slide ke beech mein padding */
+.testimonial-slide-item {
+  padding: 0 10px; 
+  box-sizing: border-box;
+}
+
+/* --- NAYA CARD STYLING --- */
 
 .testimonial-card {
-  background: #abd4bd;
-  height: 350px;
-  padding: 2rem;
-  border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  max-width: 300px;
-  text-align: center;
-  transition: transform 0.3s;
-  margin: 0 auto;
-}
-
-.testimonial-card:hover {
-  transform: translateY(-5px);
+  background-color: #db7e7e;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 24px;
+  text-align: center; /* Sab kuchh center mein */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  display: flex !important; 
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  min-height: 320px; /* Card ki height (aap adjust kar sakte hain) */
 }
 
 .testimonial-image {
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  object-fit: cover;
-  margin-bottom: 1rem;
-
-  /* ✅ Center the image horizontally */
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%; /* Photo ko gol (circular) banayega */
+  object-fit: cover; /* Image ko stretch hone se rokega */
+  margin-bottom: 15px;
+  border: 3px solid #f0f0f0;
 }
 
 .testimonial-name {
-  font-size: 1.2rem;
-  font-weight: bold;
-  color: #111;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #333333;
+  margin: 10px 0 5px 0;
 }
 
 .testimonial-position {
-  font-size: 0.9rem;
-  color: #777;
-  margin-bottom: 1rem;
+  font-size: 0.85rem;
+  color: #007bff; /* Course/position ka color */
+  margin: 0 0 15px 0;
+  font-weight: 500;
 }
 
 .testimonial-message {
+  font-size: 0.95rem;
   font-style: italic;
   color: #555;
+  margin: 0 0 15px 0;
+  flex-grow: 1; /* Taaki message space le aur rating neeche rahe */
 }
 
 .testimonial-rating {
-  margin-top: 8px;
-  color: #f4b400;
-  font-weight: bold;
-  font-size: 14px;
+  font-size: 1rem;
+  color: #f39c12; /* Stars ka color */
+  margin: 0;
 }
 
-/* Navigation buttons */
-.swiper-navigation {
-  position: absolute;
-  top: 50%;
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  z-index: 10;
-  transform: translateY(-50%);
-  padding: 0 10px;
-}
+/* --- ARROWS (TIR) KO FIX KARNE KA CODE --- */
 
-.swiper-button-prev,
-.swiper-button-next {
-  background-color: rgba(0, 0, 0, 0.5);
-  color: white;
+.slick-prev,
+.slick-next {
   width: 40px;
   height: 40px;
+  background-color: rgba(0, 0, 0, 0.6) !important;
   border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-  user-select: none;
-  transition: background-color 0.3s;
+  z-index: 10;
+}
+.slick-prev:before,
+.slick-next:before {
+  color: white !important;
+  font-size: 20px;
+}
+.slick-prev {
+  left: 15px;
+}
+.slick-next {
+  right: 15px;
 }
 
-.swiper-button-prev:hover,
-.swiper-button-next:hover {
-  background-color: #4ebfc0;
+/* Dots ko thoda style karein */
+.slick-dots li button:before {
+  font-size: 12px;
+  color: #007bff;
 }
 
-/* Media Queries for responsiveness */
-@media (max-width: 1024px) {
-  .testimonial-card {
-    max-width: 250px;
-  }
+.slick-dots li.slick-active button:before {
+  color: #0056b3;
 }
-
-@media (max-width: 768px) {
-  .testimonial-card {
-    max-width: 200px;
-  }
-
-  .testimonials-title {
-    font-size: 1.5rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .testimonial-card {
-    max-width: 100%;
-    padding: 1rem;
-  }
-
-  .testimonials-title {
-    font-size: 1.2rem;
-  }
-}
-
-@media (max-width: 412px) {
-  .testimonial-card {
-    max-width: 100%;
-    padding: 1rem;
-  }
-
-  .testimonials-title {
-    font-size: 1.2rem;
-  }
-}
+/* Responsive heading */
 @media (max-width: 400px) {
+  .testimonials-heading {
+    font-size: 1.5rem; /* Heading ko chhota karein */
+    margin-bottom: 20px; /* Margin bhi thoda reduce karein */
+  }
+
   .testimonial-card {
-    max-width: 100%;
-    padding: 1rem;
-  }
-
-  .testimonial-image {
-    width: 60px;
-    height: 60px;
-  }
-
-  .testimonial-name {
-    font-size: 1rem;
-  }
-
-  .testimonial-position {
-    font-size: 0.8rem;
+    padding: 16px; /* Card ke padding ko thoda reduce karein */
+    min-height: 280px; /* Card ki height bhi adjust karein */
   }
 
   .testimonial-message {
-    font-size: 0.9rem;
-  }
-
-  .testimonial-rating {
-    font-size: 13px;
-  }
-
-  .testimonials-title {
-    font-size: 1.2rem;
-  }
-}
-@media (max-width: 390px) {
-  .testimonial-card {
-    max-width: 100%;
-    padding: 1rem;
-  }
-
-  .testimonial-image {
-    width: 60px;
-    height: 60px;
+    font-size: 0.85rem; /* Message ko thoda chhota karein */
   }
 
   .testimonial-name {
-    font-size: 1rem;
+    font-size: 1rem; /* Name ka size adjust */
   }
 
   .testimonial-position {
-    font-size: 0.85rem;
-  }
-
-  .testimonial-message {
-    font-size: 0.9rem;
-  }
-
-  .testimonial-rating {
-    font-size: 13px;
-  }
-
-  .testimonials-title {
-    font-size: 1.2rem;
-  }
-
-  .swiper-button-prev,
-  .swiper-button-next {
-    width: 32px;
-    height: 32px;
-    font-size: 18px;
+    font-size: 0.75rem; /* Course ka size adjust */
   }
 }
 

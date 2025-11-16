@@ -1,79 +1,98 @@
-import React, { useEffect, useState, useContext } from 'react';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/css';
-import 'swiper/css/pagination';
-import 'swiper/css/navigation';
+import React, { useEffect, useState, useContext } from 'react'; // Imports add kiye
+import Slider from 'react-slick';
+import axios from 'axios'; // Axios import kiya
+import StoreContext from '../../context/StoreContext'; // Aapka context import kiya (path check kar lein)
 import './TestimonialsSlider.css';
-import { Pagination, Navigation } from 'swiper/modules';
-import axios from 'axios';
-import StoreContext from '../../context/StoreContext'; // adjust if needed
 
+// react-slick ki default CSS
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+
+// --- MODIFIED: TestimonialCard Component ---
+// (Yeh wahi card hai jismein photo, name, review sab hai)
+const TestimonialCard = ({ avatar, name, course, review, rating }) => {
+  return (
+    <div className="testimonial-card">
+      <img
+        src={avatar || 'https://via.placeholder.com/100?text=No+Image'}
+        alt={name}
+        className="testimonial-image"
+      />
+      <h3 className="testimonial-name">{name}</h3>
+      <p className="testimonial-position">{course}</p>
+      <p className="testimonial-message">"{review}"</p>
+      <p className="testimonial-rating">
+        {"⭐".repeat(rating)} ({rating})
+      </p>
+    </div>
+  );
+};
+
+// Main TestimonialsSlider Component
 const TestimonialsSlider = () => {
-  const [testimonialsData, setTestimonialsData] = useState([]);
-  const { url } = useContext(StoreContext);
+
+  // --- DATA FETCHING LOGIC ---
+  const [testimonialsData, setTestimonialsData] = useState([]); // Default empty array
+  const { url } = useContext(StoreContext); // URL context se liya
 
   useEffect(() => {
-    console.log("testimonial")
     const fetchTestimonials = async () => {
       try {
+        // Backend se data fetch kiya
         const res = await axios.get(`${url}/api/testimonials/allTestimonials`);
-        setTestimonialsData(res.data);
+        setTestimonialsData(res.data); // State mein data set kiya
       } catch (error) {
         console.error("❌ Error fetching testimonials:", error);
       }
     };
     
     fetchTestimonials();
-    console.log("testimonial2")
-  }, [url]);
+  }, [url]); // Jab 'url' badle, tab dobara fetch kare
+
+  // --- React-Slick Settings ---
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 4,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 3000,
+    arrows: true,
+    responsive: [
+      {
+        breakpoint: 1024, // Tablet
+        settings: {
+          slidesToShow: 2,
+        }
+      },
+      {
+        breakpoint: 640,  // Mobile
+        settings: {
+          slidesToShow: 1,
+        }
+      }
+    ]
+  };
 
   return (
-    <section className="testimonials-section">
-      <h2 className="testimonials-title">What Our Students Say</h2>
-
-      {/* Navigation Buttons */}
-      <div className="swiper-navigation">
-        <div className="swiper-button-prev">❮</div>
-        <div className="swiper-button-next">❯</div>
-      </div>
-
-      <Swiper
-        slidesPerView={4}
-        spaceBetween={30}
-        navigation={{
-          nextEl: '.swiper-button-next',
-          prevEl: '.swiper-button-prev',
-        }}
-        speed={500}
-        modules={[Pagination, Navigation]}
-        className="mySwiper"
-        breakpoints={{
-          1024: { slidesPerView: 4, spaceBetween: 20 },
-          768: { slidesPerView: 2, spaceBetween: 10 },
-          480: { slidesPerView: 1, spaceBetween: 10 },
-          412: { slidesPerView: 1, spaceBetween: 10 },
-          390: { slidesPerView: 1, spaceBetween: 10 },
-          0: { slidesPerView: 1, spaceBetween: 5 },
-        }}
-      >
-        {testimonialsData.map((testimonial, index) => (
-          <SwiperSlide key={index}>
-            <div className="testimonial-card">
-              <img
-                src={testimonial.avatar || 'https://via.placeholder.com/100?text=No+Image'}
-                alt={testimonial.name}
-                className="testimonial-image"
-              />
-              <h3 className="testimonial-name">{testimonial.name}</h3>
-              <p className="testimonial-position">{testimonial.course}</p>
-              <p className="testimonial-message">"{testimonial.review}"</p>
-              <p className="testimonial-rating">
-                {"⭐".repeat(testimonial.rating)} ({testimonial.rating})
-              </p>
-            </div>
-          </SwiperSlide>
+    <section className="testimonials-slider">
+      <h2 className="testimonials-heading">What Our Students Say</h2>
+      
+      <Slider {...settings}>
+        {/* Data ko 'testimonialsData' state se map kiya */}
+        {testimonialsData.map((testimonial) => (
+          <div key={testimonial.id || testimonial._id} className="testimonial-slide-item"> 
+            <TestimonialCard
+              avatar={testimonial.avatar}
+              name={testimonial.name}
+              course={testimonial.course}
+              review={testimonial.review}
+              rating={testimonial.rating}
+            />
+          </div>
         ))}
-      </Swiper>
+      </Slider>
     </section>
   );
 };

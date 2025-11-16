@@ -1,116 +1,193 @@
-/* Address Container */
-.address {
-    width: 90%;
-    max-width: 1200px;
-    margin: 100px auto; /* Adds spacing from other components */
-    padding: 40px;
-    /* background-color: #F5EFFF;  */
-    border-radius: 12px;
-    box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.08); /* Light shadow */
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 30px;
-    background-color: 		#e6ecf5;
-    border: 1px solid 		#2c3e70;
+/* =======================
+   Modern & Compact Address Component
+   ======================= */
+
+/* CSS Variables for theme consistency */
+.address-container {
+  --primary-color: #2c3e70;
+  --secondary-color: #00796B;
+  --bg-light: #ffffff;
+  --text-dark: #212529;
+  --text-light: #5a5a5a;
+  --shadow-soft: 0px 10px 30px -10px rgba(0, 0, 0, 0.08);
+  --shadow-medium: 0px 8px 24px rgba(44, 62, 112, 0.12);
+  --border-radius-main: 16px;
 }
 
-/* Address Text Section */
+/* Main Content Container */
+.address-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 90%;
+  max-width: 1200px;
+  margin: 40px auto; /* Reduced margin */
+  gap: 30px; /* Reduced gap */
+  padding: 25px 30px; /* Compact padding */
+  background: var(--bg-light);
+  border-radius: var(--border-radius-main);
+  box-shadow: var(--shadow-soft);
+  flex-wrap: wrap; /* Stack items on small screens */
+}
+
+/* === Text Section === */
 .address-section {
-    flex: 1;
-    max-width: 600px;
+  flex: 1 1 50%;
+  text-align: left;
 }
 
 .address-section h1 {
-    font-size: 28px;
-    color: #00796B;
-    margin-bottom: 15px;
-    font-weight: bold;
+  display: flex; /* Icon + text alignment */
+  align-items: center;
+  font-size: 32px; /* Reduced heading */
+  font-weight: 700;
+  color: var(--primary-color);
+  margin-bottom: 15px;
+}
+
+/* Icon inside heading */
+.address-section h1 svg {
+  margin-right: 10px;
+  color: var(--secondary-color);
+  font-size: 28px;
 }
 
 .address-section p {
-    font-size: 16px;
-    color: #444;
-    line-height: 1.6;
-    margin-bottom: 15px;
+  font-size: 16px;
+  color: var(--text-light);
+  line-height: 1.6;
+  margin-bottom: 12px;
 }
 
-/* Map Section */
+.address-section p:last-of-type {
+  margin-bottom: 20px; /* Button ke liye gap */
+}
+
+/* CTA Button */
+.map-cta-btn {
+  padding: 12px 28px;
+  font-size: 16px;
+  font-weight: 600;
+  background: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(44, 62, 112, 0.2);
+}
+
+.map-cta-btn:hover {
+  background: var(--secondary-color);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(0, 121, 107, 0.25);
+}
+
+/* === Map Section === */
 .address-map-section {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  flex: 1 1 45%;
+  height: 250px; /* Compact map height */
+  border-radius: var(--border-radius-main);
+  overflow: hidden;
+  box-shadow: var(--shadow-medium);
 }
 
 .address-map-section iframe {
-    width: 100%;
-    max-width: 400px;
-    height: 300px;
-    border-radius: 12px;
-    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.1); /* Light shadow */
-    border: none;
+  width: 100%;
+  height: 100%;
+  border: 0;
 }
 
-/* ✅ Responsive Design */
+/* =======================
+   Responsive Design
+   ======================= */
+
+/* Tablets / Medium screens */
 @media (max-width: 1024px) {
-    .address {
-        width: 90%;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        padding: 30px;
-    }
+  .address-content {
+    flex-direction: column;
+    text-align: center;
+    gap: 25px;
+    padding: 20px 25px;
+    margin: 35px auto;
+  }
 
-    .address-section {
-        max-width: 90%;
-    }
+  .address-section {
+    width: 100%;
+    order: 1; /* Optional: Text after map */
+  }
 
-    .address-map-section {
-        max-width: 100%;
-    }
+  .address-map-section {
+    order: -1; /* Map above text */
+    width: 100%;
+    height: 200px;
+  }
 
-    .address-map-section iframe {
-        max-width: 100%;
-        height: 250px;
-    }
+  .address-section h1 {
+    font-size: 28px;
+    justify-content: center;
+  }
+
+  .address-section h1 svg {
+    font-size: 24px;
+  }
+
+  .address-section p {
+    font-size: 15px;
+  }
 }
 
-@media (max-width: 768px) {
-    .address {
-        width: 95%;
-        padding: 25px;
-    }
-
-    .address-section h1 {
-        font-size: 24px;
-    }
-
-    .address-section p {
-        font-size: 14px;
-    }
-
-    .address-map-section iframe {
-        height: 200px;
-    }
-}
-
+/* Small mobile screens */
 @media (max-width: 480px) {
-    .address {
-        width: 90%;
-        margin: 60px auto;
-        padding: 20px;
-    }
+  .address-content {
+    padding: 15px 15px;
+    gap: 20px;
+  }
 
-    .address-section h1 {
-        font-size: 22px;
-    }
+  .address-section h1 {
+    font-size: 24px;
+  }
 
-    .address-section p {
-        font-size: 13px;
-    }
+  .address-section h1 svg {
+    font-size: 20px;
+  }
 
-    .address-map-section iframe {
-        height: 180px;
-    }
+  .address-section p {
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+
+  .map-cta-btn {
+    width: 100%;
+    padding: 12px;
+    font-size: 14px;
+  }
+
+  .address-map-section {
+    height: 180px;
+  }
+}
+
+/* Very small screens <= 360px */
+@media (max-width: 360px) {
+  .address-section h1 {
+    font-size: 22px;
+  }
+
+  .address-section h1 svg {
+    font-size: 18px;
+  }
+
+  .address-section p {
+    font-size: 13px;
+  }
+
+  .map-cta-btn {
+    padding: 10px;
+    font-size: 13px;
+  }
+
+  .address-map-section {
+    height: 160px;
+  }
 }

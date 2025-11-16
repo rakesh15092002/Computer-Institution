@@ -1,115 +1,163 @@
+/* Modern styles for AboutDirector component */
+
 .about-director-section {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 90%;
-    max-width: 1200px;
-    margin: 80px auto;
-    gap: 30px;
-    padding: 35px;
-    background: #F5EFFF;
-    border-radius: 14px;
-    box-shadow: 0px 8px 22px rgba(0, 0, 0, 0.1);
-    border: 1px solid #2c3e70;
+  /* CSS Variables for easy theme management */
+  --primary-color: #2c3e70;  /* Dark Navy/Purple */
+  --secondary-color: #00796B; /* Teal */
+  --bg-light: #f8f9fa;      /* Clean off-white background */
+  --text-dark: #212529;
+  --text-light: #5a5a5a;
+  --shadow-soft: 0px 10px 30px -10px rgba(0, 0, 0, 0.08);
+  --shadow-medium: 0px 8px 24px rgba(44, 62, 112, 0.12);
+  --border-radius-main: 16px; /* Softer border radius */
 }
 
-/* Text Section */
-.about-director {
-    flex: 1.3;
-    text-align: left;
-    max-width: 700px;
+.about-director-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 90%;
+  max-width: 1200px;
+  margin: 40px auto; /* CHANGED: 60px se 40px kiya */
+  gap: 40px; /* CHANGED: 60px se 40px kiya */
+  padding: 20px 40px; /* CHANGED: 30px se 20px kiya (top/bottom) */
+  background: var(--bg-light);
+  border-radius: var(--border-radius-main);
+  box-shadow: var(--shadow-soft);
+  overflow: hidden; /* Ensures shadow/border radius looks clean */
 }
 
-.about-director h1 {
-    font-size: 34px;
-    color: #00796B;
-    margin-bottom: 18px;
-    font-weight: bold;
+/* === Content Section (Text) === */
+.about-director-content {
+  flex: 1 1 55%; 
+  text-align: left;
 }
 
-.about-director p {
-    font-size: 17px;
-    color: #333;
-    line-height: 1.7;
-    margin-bottom: 15px;
+/* Sub-heading (Welcome to) */
+.about-director-content h2 {
+  font-size: 20px;
+  font-weight: 500;
+  color: var(--secondary-color);
+  margin-bottom: 0;
+  line-height: 1;
 }
 
-/* Show More Button */
+/* Main Heading */
+.about-director-content h1 {
+  font-size: 42px; 
+  color: var(--primary-color);
+  margin-bottom: 20px; /* CHANGED: 24px se 20px kiya */
+  font-weight: 700;
+  margin-top: 5px;
+}
+
+/* Paragraph text container */
+.about-director-text p {
+  font-size: 17px;
+  color: var(--text-light);
+  line-height: 1.8; 
+  margin-bottom: 15px; /* CHANGED: 20px se 15px kiya */
+}
+
+.about-director-text p:last-child {
+  margin-bottom: 0;
+}
+
+/* "Read More" Button */
 .show-btn {
-    margin-top: 10px;
-    padding: 8px 20px;
-    font-size: 14px;
-    background: #00796B;
-    color: white;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    transition: 0.3s ease;
+  margin-top: 20px; /* CHANGED: 25px se 20px kiya */
+  padding: 12px 28px;
+  font-size: 16px;
+  font-weight: 600;
+  background: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(44, 62, 112, 0.2);
 }
 
 .show-btn:hover {
-    background: #005f53;
+  background: var(--secondary-color);
+  transform: translateY(-3px); 
+  box-shadow: 0 6px 16px rgba(0, 121, 107, 0.25);
 }
 
-/* Photo Section */
+/* === Photo Section === */
 .photo-section {
-    flex: 0.9;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  flex: 1 1 40%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .photo-section img {
-    width: 100%;
-    max-width: 380px;  /* Increased photo size */
-    height: auto;
-    border-radius: 14px;
-    box-shadow: 0px 8px 18px rgba(0, 0, 0, 0.15);
-    transition: transform 0.3s ease-in-out;
+  width: 100%;
+  max-width: 420px; 
+  height: auto;
+  object-fit: cover;
+  border-radius: var(--border-radius-main);
+  box-shadow: var(--shadow-medium);
+  transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
 .photo-section img:hover {
-    transform: scale(1.02);
+  transform: scale(1.03);
 }
 
-/* Responsive Design */
+/* === Responsive Design === */
+
 @media (max-width: 1024px) {
-    .about-director-section {
-        flex-direction: column;
-        text-align: center;
-        padding: 25px;
-    }
-    .photo-section {
-        order: -1;
-        justify-content: center;
-    }
-    .about-director {
-        text-align: center;
-    }
+  .about-director-section {
+    flex-direction: column; 
+    text-align: center;
+    padding: 20px 25px; /* CHANGED: 25px se 20px kiya */
+    gap: 25px; /* CHANGED: 30px se 25px kiya */
+    margin: 30px auto; /* CHANGED: 50px se 30px kiya */
+  }
+  
+  .photo-section {
+    order: -1; 
+    width: 100%;
+  }
+
+  .about-director-content {
+    text-align: center;
+    width: 100%;
+  }
+
+  .about-director-content h1 {
+    font-size: 34px;
+    margin-bottom: 15px; /* CHANGED: Responsive ke liye bhi kam kiya */
+  }
 }
 
 @media (max-width: 768px) {
-    .about-director-section {
-        width: 90%;
-        padding: 20px;
-    }
-    .about-director h1 {
-        font-size: 26px;
-    }
-    .about-director p {
-        font-size: 15px;
-    }
-    .photo-section img {
-        max-width: 300px;
-    }
+  .about-director-content h1 {
+    font-size: 30px; 
+  }
+
+  .about-director-text p {
+    font-size: 16px; 
+  }
+
+  .photo-section img {
+    max-width: 320px;
+  }
 }
 
 @media (max-width: 480px) {
-    .about-director-section {
-        margin: 40px auto;
-        padding: 18px;
-    }
-    .photo-section img {
-        max-width: 260px;
-    }
+  .about-director-section {
+    padding: 20px 20px; /* CHANGED */
+  }
+
+  .about-director-content h1 {
+    font-size: 26px;
+  }
+
+  .show-btn {
+    width: 100%; 
+    padding: 14px;
+  }
 }

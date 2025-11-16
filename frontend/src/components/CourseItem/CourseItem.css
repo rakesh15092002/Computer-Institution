@@ -1,95 +1,145 @@
+/* =======================
+   Modern CourseItem CSS
+   ======================= */
+
+/* CSS Variables (Behtar consistency ke liye) */
+:root {
+  --primary-color: #2c3e70;
+  --secondary-color: #00796B;
+  --text-dark: #212529;
+  --text-light: #5a5a5a;
+  --bg-light: #f8f9fa;
+  --shadow-soft: 0px 8px 25px -10px rgba(0, 0, 0, 0.08);
+  --shadow-medium: 0px 10px 30px -8px rgba(44, 62, 112, 0.15);
+  --border-radius-main: 16px;
+}
+
 .ci-card {
-    width: 280px;
-    height: 350px;
-    background: white;
-    border: 1px solid #2c3e70;
-    overflow: hidden;
-    box-shadow: 0px 6px 18px rgba(0, 0, 0, 0.12);
-    display: flex;
-    flex-direction: column;
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-    border-radius: 13px;
+  width: 100%; /* Grid system handle karega */
+  height: 100%; /* Card ko grid cell ki poori height lene dega */
+  background: #fdfdfd;
+  border: 1px solid #eee; /* Halka border */
+  overflow: hidden;
+  box-shadow: var(--shadow-soft);
+  display: flex;
+  border: 1px solid #ddd;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: var(--border-radius-main);
 }
 
 .ci-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.18);
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-medium);
 }
 
-/* Image */
+/* === Image Section === */
 .ci-img-container {
-    width: 100%;
-    height: 160px;
-    overflow: hidden;
+  width: 100%;
+  height: 180px;
+  overflow: hidden;
+  position: relative; /* Category tag ko position karne ke liye */
 }
 
 .ci-img {
+    padding:8px;
     width: 100%;
     height: 100%;
     object-fit: cover;
+    /* Image ko card ke top corners se match karwaya */
+    border-top-left-radius: var(--border-radius-main);
+    border-top-right-radius: var(--border-radius-main);
+    /* Faltu padding hata di */
 }
 
-/* Info */
+/* === Category Tag (NEW) === */
+.ci-category {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: var(--secondary-color);
+  color: white;
+  padding: 4px 10px;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 600;
+  z-index: 10;
+  text-transform: capitalize;
+}
+
+
+/* === Info Section === */
 .ci-info {
-    padding: 15px;
-    background-color: #e6ecf5;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    flex-grow: 1;
+  padding: 20px;
+  /* Clean white background */
+  background-color: #ffffff; 
+  display: flex;
+  flex-direction: column;
+  /* 'flex-grow: 1' poori available space lega */
+  flex-grow: 1; 
 }
 
 /* Name + Rating */
 .ci-name-rating {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px; /* Thoda gap badhaya */
 }
 
 .ci-name {
-    font-size: 18px;
-    font-weight: bold;
-    color: #333;
+  font-size: 19px;
+  font-weight: 600; /* Bold se 600 kiya */
+  color: var(--primary-color);
 }
 
 .ci-rating {
-    width: 68px;
+  width: 68px;
 }
 
 /* Description */
 .ci-description {
-    font-size: 14px;
-    color: #555;
-    margin-bottom: 10px;
-    flex-grow: 1;
+  font-size: 14px;
+  color: var(--text-light);
+  line-height: 1.6;
+  margin-bottom: 15px;
+  /* Yeh description ko 2 line mein limit karega */
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  /* 'flex-grow: 1' price ko neeche push karega */
+  flex-grow: 1;
 }
 
 /* Price */
 .ci-price {
-    font-size: 20px;
-    font-weight: bold;
-    color: #3674b5;
-    margin-top: 10px;
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--secondary-color);
+  /* YEH SABSE IMPORTANT HAI */
+  margin-top: auto; /* Price ko hamesha bottom mein rakhega */
 }
-/* Mobile */
+
+
+/* === Responsive === */
 @media (max-width: 600px) {
-    .ci-card {
-        width: 100%;
-        height: 420px;  /* Increased height for phone view */
-        margin: 10px auto;
-    }
+  /* Mobile par grid 1-column ho jayega, 
+     isliye card styles ko override karne ki zarurat nahi */
+  .ci-card {
+    /* width: 100% (already set) */
+    /* height: auto (default) */
+  }
 
-    .ci-img-container {
-        height: 200px; /* bigger image height for mobile */
-    }
+  .ci-img-container {
+    height: 200px; /* Mobile par image thodi badi */
+  }
 
-    .ci-name {
-        font-size: 16px;
-    }
+  .ci-name {
+    font-size: 18px;
+  }
 
-    .ci-price {
-        font-size: 18px;
-    }
+  .ci-price {
+    font-size: 20px;
+  }
 }
-

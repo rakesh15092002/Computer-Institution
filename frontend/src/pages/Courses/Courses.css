@@ -99,7 +99,27 @@
 }
 
 /* Small screens (mobiles) */
+/* Small screens (mobiles) */
 @media (max-width: 600px) {
+
+  /* ↓↓↓ Add this ↓↓↓ */
+  .ci-card {
+      height: 390px;   /* Decrease height on phone */
+  }
+
+  /* .ci-img-container {
+      height: 180px;  
+  } */
+
+  .ci-info {
+      padding: 10px;
+  }
+
+  .ci-description {
+      font-size: 13px;
+  }
+  /* ↑↑↑ Add this ↑↑↑ */
+
   .cr-display-list {
     grid-template-columns: 1fr;
     gap: 15px;
@@ -123,3 +143,4 @@
     height: auto;
   }
 }
+
