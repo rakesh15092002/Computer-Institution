@@ -11,11 +11,16 @@
 
 .cr-course-display {
   display: flex;
-  background: #c8c8f1;
-  padding: 20px;
+  background: #D8D8F6;           /* Clean white */
+  padding: 22px;
   margin: auto;
   gap: 20px;
+
+  border-radius: 18px;           /* Soft rounded card */
+  border: 1px solid #e6e6e6;     /* Light border */
+  box-shadow: 0 10px 28px rgba(0,0,0,0.08);  /* Soft shadow */
 }
+
 
 .cr-photo {
   width: 40%;
@@ -23,9 +28,9 @@
 
 .cr-photo img {
   width: 100%;
-  max-width: 405px;
-  height: auto;
-  object-fit: cover;
+  height: 100%;
+  object-fit: cover;     /* Full area cover karega */
+  border-radius: 14px;   /* Optional */
 }
 
 .cr-display-text {

@@ -17,7 +17,7 @@
 .ci-card {
   width: 100%; /* Grid system handle karega */
   height: 100%; /* Card ko grid cell ki poori height lene dega */
-  background: #fdfdfd;
+  background: #f1f1f1;
   border: 1px solid #eee; /* Halka border */
   overflow: hidden;
   box-shadow: var(--shadow-soft);
@@ -72,7 +72,7 @@
 .ci-info {
   padding: 20px;
   /* Clean white background */
-  background-color: #ffffff; 
+  background-color: #f1f1f1; 
   display: flex;
   flex-direction: column;
   /* 'flex-grow: 1' poori available space lega */
@@ -117,8 +117,8 @@
   font-size: 22px;
   font-weight: 700;
   color: var(--secondary-color);
-  /* YEH SABSE IMPORTANT HAI */
-  margin-top: auto; /* Price ko hamesha bottom mein rakhega */
+  margin-top: auto;
+  padding-bottom: 12px; /* ⭐ Price ko thoda upar laa diya */
 }
 
 
