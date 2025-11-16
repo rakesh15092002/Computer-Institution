@@ -1,94 +1,95 @@
-.course-item {
+.ci-card {
     width: 280px;
     height: 350px;
     background: white;
+    border: 1px solid #2c3e70;
     overflow: hidden;
     box-shadow: 0px 6px 18px rgba(0, 0, 0, 0.12);
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
     display: flex;
     flex-direction: column;
-    border: 1px solid 		#2c3e70;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    border-radius: 13px;
 }
 
-.course-item:hover {
+.ci-card:hover {
     transform: translateY(-5px);
     box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.18);
 }
 
-/* Image container */
-.course-item-img-container {
+/* Image */
+.ci-img-container {
     width: 100%;
-    height: 180px;
+    height: 160px;
     overflow: hidden;
 }
 
-.course-item-image {
+.ci-img {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
 
-/* Course content */
-.course-item-info {
+/* Info */
+.ci-info {
     padding: 15px;
-    text-align: left;
+    background-color: #e6ecf5;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     flex-grow: 1;
-    background-color: 		#e6ecf5;
 }
 
-.course-item-name-rating {
+/* Name + Rating */
+.ci-name-rating {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 8px;
 }
 
-.course-item-name-rating p {
+.ci-name {
     font-size: 18px;
     font-weight: bold;
     color: #333;
 }
 
-.course-item-name-rating img {
+.ci-rating {
     width: 68px;
 }
 
-/* Course description */
-.course-item-description {
+/* Description */
+.ci-description {
     font-size: 14px;
     color: #555;
     margin-bottom: 10px;
     flex-grow: 1;
 }
 
-/* Course price */
-.course-item-price {
+/* Price */
+.ci-price {
     font-size: 20px;
     font-weight: bold;
-    color: #3674B5;
+    color: #3674b5;
     margin-top: 10px;
 }
-
-/* Mobile view: screen width 600px or less */
+/* Mobile */
 @media (max-width: 600px) {
-    .course-item {
-        width: 100%;      /* Take 90% of screen width */
-        height: auto;    /* Adjust height automatically */
-        margin: 10px auto; /* Center the card horizontally with some vertical spacing */
+    .ci-card {
+        width: 100%;
+        height: 420px;  /* Increased height for phone view */
+        margin: 10px auto;
     }
 
-    .course-item-img-container {
-        height: 100%; /* Optional: adjust image height for mobile */
+    .ci-img-container {
+        height: 200px; /* bigger image height for mobile */
     }
 
-    .course-item-name-rating p {
-        font-size: 16px; /* Slightly smaller text for mobile */
+    .ci-name {
+        font-size: 16px;
     }
 
-    .course-item-price {
-        font-size: 18px; /* Adjust price text */
+    .ci-price {
+        font-size: 18px;
     }
 }
+

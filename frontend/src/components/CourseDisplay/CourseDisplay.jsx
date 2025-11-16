@@ -6,27 +6,27 @@ import "./CourseDisplay.css";
 const CourseDisplay = () => {
     const { course_list } = useContext(StoreContext);
 
-    console.log("✅ Course List in CourseDisplay:", course_list); // 🔎 Debugging ke liye
-
     return (
-        <div className="course-display">
-            <h1>Our Popular Courses</h1>
-            <div className="course-display-list">
+        <div className="cd-display">
+            <h1 className="cd-display-header">Our Popular Courses</h1>
+
+            <div className="cd-display-list">
                 {course_list &&
                     course_list.map((item, index) => (
                         <CourseItem
-                            key={index}
+                            key={item._id}
                             id={item._id}
                             name={item.name}
                             image={item.image}
                             description={item.description}
                             category={item.category}
-                            price={item.price}
+                            price={item.fees}
                         />
                     ))}
             </div>
-            <div className="view-more-button">
-                <button>View more</button>
+
+            <div className="cd-view-more-container">
+                <button className="cd-view-more-button">View more</button>
             </div>
         </div>
     );
