@@ -1,3 +1,5 @@
+/* Updated ContactUs.css with fixed responsive box layout */
+
 /* ===========================
    Contact Section Wrapper
 =========================== */
@@ -27,7 +29,7 @@
 }
 
 /* ===========================
-   Contact Info Boxes
+   Contact Info Boxes (FIXED)
 =========================== */
 .contact-connect-section {
   display: flex;
@@ -35,6 +37,7 @@
   gap: 25px;
   margin-bottom: 30px;
   flex-wrap: wrap;
+  max-width: 100%;
 }
 
 .box {
@@ -42,10 +45,18 @@
   padding: 18px;
   border-radius: 12px;
   width: 220px;
+  min-height: 120px; /* ensures text stays inside */
+  word-wrap: break-word; /* prevents text from overflowing */
+  overflow-wrap: break-word;
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
   transition: 0.3s ease;
   cursor: pointer;
   backdrop-filter: blur(6px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
 .box:hover {
@@ -58,13 +69,14 @@
   color: #0d6efd;
   font-size: 1.4rem;
   margin-bottom: 6px;
+  word-break: break-word;
 }
 
 .box p {
   color: #555;
   font-size: 0.95rem;
+  word-break: break-word;
 }
-
 
 /* ===========================
    Content Section (Form + Image)
@@ -76,7 +88,6 @@
   height: 600px;
 }
 
-/* ======== FORM ======== */
 .form {
   height: 100%;
   width: 50%;
@@ -137,8 +148,7 @@ form button:hover {
   background: #0047b3;
 }
 
-
-/* ======== IMAGE ======== */
+/* IMAGE */
 .img-section {
   height: 100%;
   width: 45%;
@@ -158,9 +168,7 @@ form button:hover {
   transform: scale(1.03);
 }
 
-/* ===========================
-   Map Section
-=========================== */
+/* MAP */
 .map {
   width: 100%;
   margin-top: 40px;
@@ -172,65 +180,53 @@ form button:hover {
   border-radius: 12px;
   box-shadow: 0 4px 14px rgba(0,0,0,0.15);
 }
-/* ===========================
-   MEDIA QUERIES
-=========================== */
 
+/* ===== MEDIA QUERIES ===== */
 
 @media (max-width: 800px) {
   .contact-content-section .form{
     width: 100%;
   }
-
   .img-section {
     display: none;
   }
 }
 
-/* Small Tablets < 768px */
 @media (max-width: 768px) {
   .contact {
     width: 90%;
   }
-
   .contact-connect-section {
     gap: 18px;
   }
-
   .box {
     width: 180px;
-  }
-
-  form {
-    padding: 18px;
+    min-height: 110px;
   }
 }
 
-/* Mobile < 576px */
 @media (max-width: 576px) {
   .contact h1 {
     font-size: 28px;
   }
-
   .box {
     width: 150px;
     padding: 14px;
+    min-height: 110px;
   }
-
   form input,
   form textarea {
     padding: 10px;
   }
-
   .map iframe {
     height: 300px;
   }
 }
 
-/* Extra Small Phones < 360px */
 @media (max-width: 360px) {
   .box {
     width: 100%;
+    min-height: 120px;
   }
   .contact-connect-section {
     gap: 10px;
