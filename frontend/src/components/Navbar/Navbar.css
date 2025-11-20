@@ -71,6 +71,11 @@
   color: #000;
 }
 
+/* Mobile Login Button - Default Hidden */
+.navbar-login-btn-mobile {
+  display: none;
+}
+
 /* Hamburger Icon */
 .hamburger {
   display: none;
@@ -104,17 +109,28 @@
   .navbar-menu {
     flex-direction: column;
     position: fixed;
-    top: 190px;
+    
+    /* This should match the combined height of your TopHeader + Navbar Logo bar */
+    top: 190px; 
+    
     right: -100%;
-    width: 60%;
-    height: calc(100% - 80px);
+    width: 250px;
+    
+    /* FIX FOR SCROLLING: 
+       Calculates remaining height so content doesn't get cut off */
+    height: calc(100vh - 190px); 
+    
     background: #0f172a;
     padding: 20px;
+    padding-bottom: 40px; /* Extra padding at bottom for scrolling */
     text-align: left;
     transition: right 0.3s ease;
-    overflow-y: auto;
-    flex-wrap: wrap;
-    min-width: 250px;
+    
+    /* Enables scrolling if content is too long */
+    overflow-y: auto; 
+    
+    flex-wrap: nowrap;
+    box-shadow: -2px 0 5px rgba(0,0,0,0.2);
   }
 
   .navbar-menu.show {
@@ -124,7 +140,7 @@
   .navbar-menu a {
     display: block;
     margin: 5px 0;
-    padding: 10px;
+    padding: 12px;
     font-size: 18px;
     border-radius: 8px;
     border-bottom: 1px solid #19243d;
@@ -139,21 +155,29 @@
     color: #f59e0b;
   }
 
-  /* Mobile Login Button */
-  .navbar-login-btn-mobile {
-    display: block;
-    width: 100%;
-    text-align: left;
-    margin: 10px 0;
-    top: 168px;
-    padding: 10px;
-    border-radius: 8px;
-    border: 1px solid #fff;
-    background: transparent;
-    color: #fff;
-    cursor: pointer;
-    font-size: 16px;
-  }
+ /* Mobile Login Button - Visible Here */
+.navbar-login-btn-mobile {
+  display: block;
+  width: 100%;
+  text-align: center;
+  margin: 20px 0 10px 0;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #f59e0b;
+  background: transparent;
+  color: #f59e0b;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+/* Touch-friendly styles for mobile */
+.navbar-login-btn-mobile:active,
+.navbar-login-btn-mobile:focus {
+  background-color: #f59e0b;
+  color: #000;
+}
 
   .navbar-login-btn-mobile:hover {
     background-color: #f59e0b;

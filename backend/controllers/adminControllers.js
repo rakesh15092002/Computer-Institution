@@ -10,6 +10,8 @@ const JWT_SECRET = process.env.JWT_SECRET || "mysecretkey"; // Use .env in produ
 
 export const adminLogin = async (req, res) => {
   const { email, password } = req.body;
+//   console.log("REQ BODY:", req.body);
+// console.log(await adminModel.find());
 
   // Basic validation
   if (!email || !password) {

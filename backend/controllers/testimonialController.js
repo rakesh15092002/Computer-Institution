@@ -4,7 +4,7 @@ import fs from 'fs';
 
 export const addTestimonial = async (req, res) => {
   try {
-    const { name, course, review, rating, avatar } = req.body;
+    const { name, course, review, rating } = req.body;
 
     if (!name || !review || !rating) {
       return res.status(400).json({ message: "Name, review, and rating are required." });
@@ -15,19 +15,23 @@ export const addTestimonial = async (req, res) => {
     // ✅ Case 1: Upload image file to Cloudinary
     if (req.file) {
       const localPath = req.file.path;
-      const cloudinaryUrl = await uploadOnCloudinary(localPath);
+      const cloudinaryResult = await uploadOnCloudinary(localPath);
 
-      if (!cloudinaryUrl) {
+      if (!cloudinaryResult || !cloudinaryResult.url) {
         return res.status(500).json({ message: "Cloudinary upload failed" });
       }
 
-      avatarUrl = cloudinaryUrl;
-      fs.unlinkSync(localPath); // 🧹 Cleanup temp file
+      avatarUrl = cloudinaryResult.url; // Store only URL as string
+
+      // ✅ Safe cleanup: delete file only if it exists
+      if (fs.existsSync(localPath)) {
+        fs.unlinkSync(localPath);
+      }
     }
 
     // ✅ Case 2: Use URL sent in request body
-    else if (avatar) {
-      avatarUrl = avatar;
+    else if (req.body.avatar) {
+      avatarUrl = req.body.avatar;
     }
 
     const newTestimonial = new Testimonial({
@@ -35,7 +39,7 @@ export const addTestimonial = async (req, res) => {
       course,
       review,
       rating,
-      avatar: avatarUrl,
+      avatar: avatarUrl, // Must be string
     });
 
     await newTestimonial.save();
@@ -51,8 +55,7 @@ export const addTestimonial = async (req, res) => {
   }
 };
 
-
-// 👉 Get all testimonials
+// Get all testimonials
 export const getAllTestimonials = async (req, res) => {
   try {
     const testimonials = await Testimonial.find().sort({ date: -1 });
@@ -62,7 +65,7 @@ export const getAllTestimonials = async (req, res) => {
   }
 };
 
-// 👉 Delete a testimonial by ID
+// Delete testimonial by ID
 export const deleteTestimonial = async (req, res) => {
   try {
     const { id } = req.params;

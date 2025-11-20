@@ -20,6 +20,11 @@ const Navbar = ({ setShowLogin }) => {
     setHamburger(false);
   };
 
+  const handleMobileLoginClick = () => {
+    setShowLogin(true);
+    setHamburger(false); // Close menu after clicking login
+  };
+
   return (
     <div className="navbar">
       <TopHeader />
@@ -43,9 +48,13 @@ const Navbar = ({ setShowLogin }) => {
 
           {token && role === "admin" && <Link to="/admin">Admin</Link>}
 
+          {/* Mobile Login Button (Hidden on Desktop via CSS) */}
+          <button className="navbar-login-btn-mobile" onClick={handleMobileLoginClick}>
+            Login
+          </button>
         </div>
 
-        {/* Desktop Login Button */}
+        {/* Desktop Login Button (Hidden on Mobile via CSS) */}
         <div className="navbar-button-desktop">
           <button className="navbar-login-btn" onClick={() => setShowLogin(true)}>Login</button>
         </div>

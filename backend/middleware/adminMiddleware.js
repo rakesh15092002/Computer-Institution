@@ -2,7 +2,7 @@ import jwt from 'jsonwebtoken';
 
 const adminAuth = async (req, res, next) => {
   try {
-    console.log("hit hua")
+    // console.log("REQ BODY:", req.body);
     const authHeader = req.headers.authorization;
 
     if (!authHeader || !authHeader.startsWith('Bearer ')) {
