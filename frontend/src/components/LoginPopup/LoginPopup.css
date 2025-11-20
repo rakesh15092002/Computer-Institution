@@ -14,9 +14,13 @@
     /* Centers content */
 }
 
+
 .login-popup-container {
     place-self: center;
-    width: max(23vw, 330px);
+    width: 380px;             /* Desktop width */
+    max-width: 90%;           /* Responsive */
+    max-height: 60vh;         /* ✅ Limit height to viewport */
+    z-index: 1500;
     color: #808080;
     background-color: white;
     display: flex;
@@ -27,6 +31,7 @@
     animation: fadeIn 0.5s;
     font-size: 14px;
 }
+
 
 .login-popup-title {
     display: flex;
@@ -144,5 +149,26 @@
         left: 0;
         bottom: 0;
         height: 100%;
+    }
+}
+/* Mobile < 768px */
+@media screen and (max-width: 768px) {
+    .login-popup {
+        position: fixed;
+        z-index: 1500;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        height: 100%;
+        display: grid;
+        place-items: center;
+    }
+
+    .login-popup-container {
+        width: 80%;
+        max-height: 50vh; /* Reduced height for mobile */
+        padding: 20px;
+        overflow-y: auto; /* Scroll if content exceeds */
     }
 }

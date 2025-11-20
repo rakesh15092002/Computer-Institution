@@ -44,7 +44,6 @@ const Navbar = ({ setShowLogin }) => {
           <Link to="notifications" onClick={() => handleMenuClick("notifications")} className={menu === "notifications" ? "active" : ""}>Notifications</Link>
           <Link to="contact-us" onClick={() => handleMenuClick("contact")} className={menu === "contact" ? "active" : ""}>Contact Us</Link>
           <Link to="about-us" onClick={() => handleMenuClick("about")} className={menu === "about" ? "active" : ""}>About</Link>
-          <Link to="about-us" onClick={() => handleMenuClick("about")} className={menu === "about" ? "active" : ""}>Testimonials</Link>
 
           {token && role === "admin" && <Link to="/admin">Admin</Link>}
 
